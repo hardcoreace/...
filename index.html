@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>My First Webpage</title>
-    </head>
-   <body>
-       <h1>welcome to my first webpage</h1>
-       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin tellus rhoncus augue fermentum volutpat. 
-          Vestibulum ultrices auctor massa id mattis. Ut non mi dignissim nisl tincidunt porta in in ante. Morbi tortor erat, sagittis quis 
-          facilisis in, pellentesque in dui. Donec ultricies a justo eu fringilla. Nunc eget auctor eros, vitae porta quam. Curabitur at 
-          ipsum sem. Proin et accumsan augue. Quisque est ex, feugiat non mattis sit amet, mattis vitae tortor. Maecenas vitae auctor leo, nec congue orci. 
-          Nullam pharetra mi vel ante pharetra, quis hendrerit est finibus. Sed convallis, mauris in rutrum venenatis, est est molestie diam, in sodales quam lorem
-          ut metus. Nam tristique ligula est. Quisque tristique porta purus vel dapibus.</p>
-    </body>
+<head>
+	
+	<title>Quick Start - Leaflet</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+
+	
+</head>
+<body>
+
+
+
+<div id="mapid" style="width: 100%; height: 800px;"></div>
+<script>
+
+	var mymap = L.map('mapid').setView([51.14471, -2.69866], 15);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 20,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(mymap);
+	
+	var marker = L.marker([51.14471, -2.69866]).addTo(mymap);   
+	//marker.bindPopup("<img style='width: 300px' src='tor.jpg'/><br /><b>Glastonbury Tor</b>").openPopup();	
+	
+	//var college = L.marker([51.129852, -2.7334955]).addTo(mymap);
+	//college.bindPopup("<b>C Block</b><br>Strode College").openPopup();
+	
+	//var college1 = L.marker([51.129952, -2.7334955]).addTo(mymap);
+
+</script>
+
+
+
+</body>
 </html>
