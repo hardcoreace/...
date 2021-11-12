@@ -65,7 +65,12 @@
     	radius: 50
 	}).addTo(mymap);
 	
-
+	var circle = L.circle([51.13259, -2.73076], {
+    		color: 'black',
+  		fillColor: '#f03',
+    		fillOpacity: 0.7,
+    	radius: 50
+	}).addTo(mymap);
 	
 	//var college1 = L.marker([51.129952, -2.7334955]).addTo(mymap); 51.130495 , -2.7340011
 	mymap.addControl(new L.Control.Fullscreen());
