@@ -58,6 +58,13 @@
 	var college3 = L.marker([51.129192, -2.7318768]).addTo(mymap);
 	college3.bindPopup("<b>A Block</b><br>Strode College").openPopup();
 	
+	var circle = L.circle([51.129192, -2.7318768], {
+    		color: 'blue',
+  		fillColor: '#f03',
+    		fillOpacity: 0.35,
+    	radius: 250
+	}).addTo(mymap);
+	
 
 	
 	//var college1 = L.marker([51.129952, -2.7334955]).addTo(mymap); 51.130495 , -2.7340011
