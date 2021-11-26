@@ -62,6 +62,9 @@
 	james.bindPopup("<b>Fiend</b><br>Jam Ham Location").openPopup();
 	james.bindPopup("<img style='width: 300px' src='cblock.jpg'/><b>Jam Ham's House</b><br>DANGER<br>The man himself").openPopup();
 	
+	var badben = L.marker([39.336143, -74.629681]).addTo(mymap);
+	badben.bindPopup("<b>A Block</b><br>Strode College").openPopup();
+	
 	var collegemaps = L.layerGroup([college, college1, college2, college3]).addTo(mymap);
 	
 	var surface = L.tileLayer('https://geoffrowland.github.io/Surface-Street/{z}/{x}/{y}.png', {
