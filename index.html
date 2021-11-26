@@ -62,6 +62,16 @@
 	james.bindPopup("<b>Fiend</b><br>Jam Ham Location").openPopup();
 	james.bindPopup("<img style='width: 300px' src='cblock.jpg'/><b>Jam Ham's House</b><br>DANGER<br>The man himself").openPopup();
 	
+	var college = L.layerGroup([college, college1, college2, college3]).addTo(mymap);
+	
+	var surface = L.tileLayer('https://geoffrowland.github.io/Surface-Street/{z}/{x}/{y}.png', {
+	    tms: true, 
+	    opacity: 1.0,
+	    maxNativeZoom: 18,	
+	    maxZoom: 20,
+	    minZoom: 12,
+	    attribution: 'LiDAR 1m DSM Environment Agency OGL &copy; Crown Copyright 2021'
+	
 	var circle = L.circle([51.130391, -2.7318594], {
     		color: 'blue',
   		fillColor: '#f03',
@@ -77,6 +87,11 @@
 	}).addTo(mymap);
 	
 	//var college1 = L.marker([51.129952, -2.7334955]).addTo(mymap); 51.130495 , -2.7340011
+	var overlayMaps = {
+	    "Surface": surface,
+            "College": college
+        };
+        L.control.layers(baseMaps, overlayMaps).addTo(mymap);
 	mymap.addControl(new L.Control.Fullscreen());
 	L.control.mousePosition().addTo(mymap);
 </script>
